@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now - Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="clouds"></div>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">Weather Now</h1>
+            <p class="tagline">Your cosmic weather companion</p>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </header>
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="cityInput" class="search-input" placeholder="Enter city name..." />
+                <button id="searchBtn" class="btn btn-primary">Search</button>
+                <button id="locationBtn" class="btn btn-secondary">📍 My Location</button>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+            <div id="successMessage" class="success-message"></div>
+        </section>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Fetching cosmic weather data...</p>
+        </div>
+        <main id="weatherDisplay" class="weather-display">
+            <section class="current-weather">
+                <div id="weatherIcon" class="weather-icon">🌞</div>
+                <div id="temperature" class="temperature">25°C</div>
+                <div id="location" class="location">City, Country</div>
+                <div id="description" class="description">Clear sky</div>
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-label">Humidity</div>
+                        <div id="humidity" class="detail-value">65%</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">💨</div>
+                        <div class="detail-label">Wind Speed</div>
+                        <div id="windSpeed" class="detail-value">10 km/h</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">👁️</div>
+                        <div class="detail-label">Visibility</div>
+                        <div id="visibility" class="detail-value">10 km</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌡️</div>
+                        <div class="detail-label">Feels Like</div>
+                        <div id="feelsLike" class="detail-value">28°C</div>
+                    </div>
+                </div>
+            </section>
+            <section class="forecast-section">
+                <h2 class="forecast-title">7-Day Cosmic Forecast</h2>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be dynamically generated -->
+                </div>
+            </section>
+        </main>
+        <div id="weatherModal" class="weather-modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <div class="modal-header">
+                    <div id="modalDate" class="modal-date">Selected Date</div>
+                    <div id="modalWeatherIcon" class="modal-weather-icon">🌞</div>
+                    <div id="modalDescription" class="description">Weather Description</div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">🌡️</div>
+                        <div class="detail-label">High / Low</div>
+                        <div id="modalTemps" class="detail-value">25° / 15°</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-label">Humidity</div>
+                        <div id="modalHumidity" class="detail-value">65%</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">💨</div>
+                        <div class="detail-label">Wind Speed</div>
+                        <div id="modalWind" class="detail-value">10 km/h</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌅</div>
+                        <div class="detail-label">Sunrise</div>
+                        <div id="modalSunrise" class="detail-value">06:30</div>
+                    </div>
+                </div>
+                <div class="hourly-forecast" id="hourlyForecast">
+                    <!-- Hourly forecast will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Sukanya Katta. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
